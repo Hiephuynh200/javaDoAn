@@ -18,7 +18,30 @@
 
     <div id="layoutSidenav_content">
         <main>
-
+            <table class="table">
+                <tr>
+                    <th>Id Product</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Images</th>
+                    <th>Category</th>
+                    <th>Action</th>
+                </tr>
+                <tr th:each="sp : ${sanphams}">
+                    <td th:text="${sp.maSp}"></td>
+                    <td th:text="${sp.tenSP}"></td>
+                    <td th:text="${sp.donGia}"></td>
+                    <td th:text="${sp.hinhAnh}"></td>
+                    <td th:text="${sp.loaiSP.tenLoai}"></td>
+                    <td>
+<!--                        <a th:href="@{/admin/edit/{id}(id=${book.id})}">Edit</a> |-->
+<!--                        <a th:href="@{/books/delete/{id}(id=${book.id})}"-->
+<!--                           onclick="return confirm('are you sure?')">-->
+<!--                            Delete-->
+<!--                        </a>-->
+                    </td>
+                </tr>
+            </table>
         </main>
         <th:block th:replace="FooterAdmin :: FooterAdmin"></th:block>
 

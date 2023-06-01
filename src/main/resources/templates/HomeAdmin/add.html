@@ -18,11 +18,11 @@
 
   <div id="layoutSidenav_content">
     <main>
-      <form th:action="@{/admin/add} " th:object="${sp}" method="post">
+      <form th:action="@{/admin/add} " th:object="${sanPham}" method="post">
         <div class="col-6 mb-3">
           <label for="title" class="form-label">Tên Sản phẩm:</label>
           <input type="text" class="form-control" id="title" th:field="*{tenSP}">
-        </div>
+        </div>list
         <div class="col-6 mb-3">
           <label for="author" class="form-label">Đơn Giá:</label>
           <input type="text" class="form-control" id="author" th:field="*{donGia}">
@@ -33,10 +33,10 @@
         </div>
         <div class="col-6 mb-3">
           <label for="category" class="form-label">Loại Sản Phẩm:</label>
-          <select class="form-control" id="category" name="lsp.maLoai">
+          <select class="form-control" id="category" name="loaisp.maLoai">
             <option value="">--Select Category</option>
-            <option th:each="lsp :${loaisp}" th:value="${lsp.maLoai}"
-                    th:text="${lsp.tenLoai}"></option>
+            <option th:each="loaisp :${LoaiSp}" th:value="${loaisp.maLoai}"
+                    th:text="${loaisp.tenLoai}"></option>
           </select>
         </div>
         <input type="submit" class="btn btn-primary" value="Save">
